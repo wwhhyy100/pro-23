@@ -33,26 +33,21 @@ function setup() {
   player = Bodies.rectangle(250, playerBase.position.y - 160, 50, 180, options);
   World.add(world,player)
 
-  playerArcher = new PlayerArcher(
-    300,
-    playerBase.position.y - 100,
-    120,
-    100
-  );
+  playerArcher = new PlayerArcher(300,playerBase.position.y - 100,120,100);
 }
 
 function draw() {
   background(backgroundImg);
 
   Engine.update(engine);
-  image(baseimage,playerBase.position.x,playerBase.position.y,180,150)
-  image(playerimage,player.position.x,player.position.y,50,180)
-
-  playerArcher.display();
+  image(baseimage,playerBase.position.x,playerBase.position.y,180,150);
+  image(playerimage,player.position.x,player.position.y,50,180);
 
   // Title
   fill("#FFFF");
   textAlign("center");
   textSize(40);
   text("EPIC ARCHERY", width / 2, 100);
+
+  playerArcher.display();
 }
